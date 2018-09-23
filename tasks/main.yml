@@ -1,0 +1,31 @@
+---
+# tasks file for memcached
+- name: load default variables
+  include_vars:
+    file: default.yml
+
+- name: load os-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - default.yml
+
+- name: install software
+  package:
+    name: memcached
+    state: installed
+
+- name: configure software
+  template:
+    src: memcached.j2
+    dest: /etc/sysconfig/memcached
+  notify:
+    - restart software
+
+- name: start software
+  service:
+    name: memcached
+    state: started
+  when:
+    - ansible_virtualization_type != "docker"
