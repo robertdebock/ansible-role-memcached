@@ -19,7 +19,7 @@
 - name: configure software
   template:
     src: memcached.j2
-    dest: /etc/sysconfig/memcached
+    dest: "{{ memcached_configfile }}"
   notify:
     - restart software
 

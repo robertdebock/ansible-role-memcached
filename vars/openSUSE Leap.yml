@@ -1,3 +1,3 @@
 ---
 # vars file for memcached
-# memcached_parameter: value
+memcached_configfile: /etc/sysconfig/memcached
