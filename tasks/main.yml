@@ -18,7 +18,7 @@
 
 - name: configure software
   template:
-    src: memcached.j2
+    src: "{{ ansible_distribution }}-memcached.j2"
     dest: "{{ memcached_configfile }}"
   notify:
     - restart software
