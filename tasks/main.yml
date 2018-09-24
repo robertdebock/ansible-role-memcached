@@ -14,7 +14,7 @@
 - name: install software
   package:
     name: memcached
-    state: installed
+    state: present
 
 - name: configure software
   template:
