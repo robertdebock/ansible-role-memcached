@@ -16,6 +16,18 @@
     name: memcached
     state: present
 
+- name: allow software to be configured
+  copy:
+    src: memcached.service
+    dest: /usr/lib/systemd/system/memcached.service
+  when:
+    - ansible_distribution == "Archlinux"
+  notify:
+    - systemctl daemon-reload
+
+- name: flush handlers
+  meta: flush_handlers
+
 - name: configure software
   template:
     src: "{{ ansible_distribution }}-memcached.j2"
