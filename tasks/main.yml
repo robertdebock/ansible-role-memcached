@@ -1,22 +1,11 @@
 ---
 # tasks file for memcached
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
-- name: install software
+- name: install memcached
   package:
     name: memcached
-    state: present
+    state: "{{ memcached_package_state }}"
 
-- name: allow software to be configured
+- name: allow memcached to be configured
   copy:
     src: memcached.service
     dest: /usr/lib/systemd/system/memcached.service
@@ -28,14 +17,15 @@
 - name: flush handlers
   meta: flush_handlers
 
-- name: configure software
+- name: configure memcached
   template:
     src: "{{ ansible_distribution }}-memcached.j2"
-    dest: "{{ memcached_configfile }}"
+    dest: "{{ memcached_configfile[ansible_distribution]
+          | default(memcached_configfile['default']) }}"
   notify:
-    - restart software
+    - restart memcached
 
-- name: start software
+- name: start memcached
   service:
     name: memcached
     state: started

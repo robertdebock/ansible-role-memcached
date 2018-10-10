@@ -8,7 +8,7 @@
   when:
     - ansible_virtualization_type != "docker"
 
-- name: restart software
+- name: restart memcached
   service:
     name: memcached
     state: restarted
