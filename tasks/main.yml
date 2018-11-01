@@ -20,8 +20,7 @@
 - name: configure memcached
   template:
     src: "{{ ansible_distribution }}-memcached.j2"
-    dest: "{{ memcached_configfile[ansible_distribution]
-          | default(memcached_configfile['default']) }}"
+    dest: "{{ memcached_configfile }}"
   notify:
     - restart memcached
 

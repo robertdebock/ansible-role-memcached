@@ -5,40 +5,72 @@ memcached
 
 Provides memcached for your system.
 
-[Unit tests](https://travis-ci.org/robertdebock/ansible-role-memcached) are done on every commit and periodically.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-memcached/issues)
+Example Playbook
+----------------
 
-To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+This example is taken from `molecule/default/playbook.yml`:
 ```
-pip install molecule
-molecule test
+---
+- name: Converge
+  hosts: all
+  gather_facts: false
+  become: true
+
+  roles:
+    - robertdebock.bootstrap
+    - robertdebock.memcached
+
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
+
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```
+---
+# defaults file for memcached
+
+# The tcp port memcached should listen on.
+memcached_port: 11211
+
+# The address memcached should bind on.
+memcached_listenon: "127.0.0.1"
+
+# The user memcached should run under.
+memcached_user: memcached
+
+# The maximum connections memcached.
+memcached_maxconn: 1024
+
+# The cachesize.
+memcached_cachesize: 64
+
+# To update all packages installed by this roles, set `memcached_package_state` to `latest`.
+memcached_package_state: present
+
+```
+
+Requirements
+------------
+
+- Access to a repository containing packages, likely on the internet.
+- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
+
+The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+
+---
+- robertdebock.bootstrap
+
 
 Context
---------
+-------
+
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/memcached.png "Dependency")
 
-Requirements
-------------
-
-- A system installed with required packages to run Ansible. Hint: [bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap).
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
-
-Role Variables
---------------
-
-- memcached_parameter: Description of values. [default: value]
-
-Dependencies
-------------
-
-- None known.
 
 Compatibility
 -------------
@@ -65,36 +97,26 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
-Example Playbook
-----------------
+Testing
+-------
 
-```
----
-- name: memcached
-  hosts: all
-  gather_facts: no
-  become: yes
+[Unit tests](https://travis-ci.org/robertdebock/ansible-role-memcached) are done on every commit and periodically.
 
-  roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.memcached
-      memcached_parameter: value
-```
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-memcached/issues)
 
-To install this role:
-- Install this role individually using `ansible-galaxy install robertdebock.memcached`
+To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+```
+pip install molecule
+molecule test
+```
+There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/requirements.yml
-```
----
-- name: robertdebock.bootstrap
-- name: robertdebock.memcached
-```
 
 License
 -------
 
-Apache License, Version 2.0
+Apache-2.0
+
 
 Author Information
 ------------------

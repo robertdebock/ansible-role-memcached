@@ -1,8 +1,10 @@
 ---
 # vars file for memcached
-memcached_configfile:
+_memcached_configfile:
   default: /etc/sysconfig/memcached
   Alpine: /etc/conf.d/memcached
   Archlinux: /etc/memcached
   Debian: /etc/memcached.conf
   Ubuntu: /etc/memcached.conf
+
+memcached_configfile: "{{ _memcached_configfile[ansible_distribution] | default(_memcached_configfile['default']) }}"
