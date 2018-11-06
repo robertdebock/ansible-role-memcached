@@ -3,8 +3,7 @@ memcached
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-memcached.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-memcached)
 
-Provides memcached for your system.
-
+The purpose of this role is to install and configure memcached on your system.
 
 Example Playbook
 ----------------
