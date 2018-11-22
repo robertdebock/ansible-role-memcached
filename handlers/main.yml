@@ -6,11 +6,11 @@
   notify:
     - restart software
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or memcached_ignore_docker
 
 - name: restart memcached
   service:
     name: memcached
     state: restarted
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or memcached_ignore_docker
