@@ -4,6 +4,9 @@
   package:
     name: memcached
     state: "{{ memcached_package_state }}"
+  register: memcached_install_memcached
+  until: memcached_install_memcached is succeeded
+  retries: 3
 
 - name: allow memcached to be configured
   copy:
