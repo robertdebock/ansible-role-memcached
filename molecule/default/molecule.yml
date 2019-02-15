@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: memcached-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: memcached-ubuntu-artful
-    image: ubuntu:artful
+  - name: memcached-ubuntu-latest
+    image: ubuntu:latest
+  - name: -ubuntu-rolling
+    image: ubuntu:rolling
   - name: memcached-ubuntu-devel
     image: ubuntu:devel
   - name: memcached-ubuntu-latest
