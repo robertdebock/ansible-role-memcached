@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: memcached-opensuse-leap
     image: opensuse:leap
-  - name: memcached-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: memcached-ubuntu-latest
     image: ubuntu:latest
   - name: -ubuntu-rolling
