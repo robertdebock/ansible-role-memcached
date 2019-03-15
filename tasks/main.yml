@@ -3,7 +3,7 @@
 - name: install memcached
   package:
     name: memcached
-    state: "{{ memcached_package_state }}"
+    state: present
   register: memcached_install_memcached
   until: memcached_install_memcached is succeeded
   retries: 3
@@ -32,4 +32,4 @@
     name: memcached
     state: started
   when:
-    - ansible_virtualization_type != "docker" or memcached_ignore_docker
+    - ansible_virtualization_type != "docker"

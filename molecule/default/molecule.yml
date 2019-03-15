@@ -3,10 +3,10 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: memcached-alpine-edge
     image: alpine:edge
@@ -34,7 +34,7 @@ platforms:
     image: opensuse:leap
   - name: memcached-ubuntu-latest
     image: ubuntu:latest
-  - name: -ubuntu-rolling
+  - name: memcached-ubuntu-rolling
     image: ubuntu:rolling
   - name: memcached-ubuntu-devel
     image: ubuntu:devel
@@ -42,17 +42,7 @@ platforms:
     image: ubuntu:latest
 provisioner:
   name: ansible
-  inventory:
-    host_vars:
-      memcached-fedora-rawhide:
-        ansible_python_interpreter: /usr/bin/python3
-    group_vars:
-      all:
-        memcached_ignore_docker: no
   lint:
     name: ansible-lint
-  config_options:
-    defaults:
-      callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
 scenario:
   name: default
