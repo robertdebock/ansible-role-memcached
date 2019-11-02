@@ -31,5 +31,3 @@
   service:
     name: memcached
     state: started
-  when:
-    - ansible_virtualization_type != "docker"

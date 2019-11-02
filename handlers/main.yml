@@ -5,12 +5,8 @@
     daemon_reload: yes
   notify:
     - restart software
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: restart memcached
   service:
     name: memcached
     state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
