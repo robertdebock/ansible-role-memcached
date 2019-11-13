@@ -7,9 +7,6 @@ memcached_port: 11211
 # The address memcached should bind on.
 memcached_listenon: "127.0.0.1"
 
-# The user memcached should run under.
-memcached_user: memcached
-
 # The maximum connections memcached.
 memcached_maxconn: 1024
 
