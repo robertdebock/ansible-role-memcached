@@ -49,9 +49,6 @@ memcached_port: 11211
 # The address memcached should bind on.
 memcached_listenon: "127.0.0.1"
 
-# The user memcached should run under.
-memcached_user: memcached
-
 # The maximum connections memcached.
 memcached_maxconn: 1024
 
@@ -89,7 +86,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
 |amazonlinux|latest|no|
 |alpine|latest|no|
 |alpine|edge|yes|
@@ -108,6 +104,14 @@ This role has been tested on these Ansible versions:
 - ansible>=2.9
 - git+https://github.com/ansible/ansible.git@devel
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| amazonlinux | /etc/init.d/memcached: line 26: /etc/sysconfig/network: No such file or directory |
 
 
 
