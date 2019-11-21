@@ -36,7 +36,6 @@ galaxy_info:
 
   galaxy_tags:
     - memcached
-    - alpine
     - centos
     - debian
     - el
