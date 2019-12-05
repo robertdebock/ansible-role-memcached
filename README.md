@@ -115,7 +115,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux | /etc/init.d/memcached: line 26: /etc/sysconfig/network: No such file or directory |
 
 
-
 Testing
 -------
 
