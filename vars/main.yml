@@ -11,7 +11,6 @@ memcached_user: "{{ _memcached_user[ansible_os_family] | default(_memcached_user
 _memcached_configfile:
   default: /etc/sysconfig/memcached
   Alpine: /etc/conf.d/memcached
-  Archlinux: /etc/memcached
   Debian: /etc/memcached.conf
   RedHat: /etc/sysconfig/memcached
 
