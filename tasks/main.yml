@@ -7,9 +7,6 @@
   package:
     name: memcached
     state: present
-  register: memcached_install_memcached
-  until: memcached_install_memcached is succeeded
-  retries: 3
 
 - name: allow memcached to be configured
   copy:
