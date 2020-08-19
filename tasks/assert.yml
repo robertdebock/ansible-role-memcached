@@ -6,12 +6,14 @@
       - memcached_port | int
       - memcached_port | int > 0
       - memcached_port | int < 65536
+    quiet: yes
 
 - name: test if memcached_listenon is set correctly
   assert:
     that:
       - memcached_listenon is defined
       - memcached_listenon | length > 0
+    quiet: yes
 
 - name: test if memcached_maxconn is set correctly
   assert:
@@ -19,6 +21,7 @@
       - memcached_maxconn is defined
       - memcached_maxconn | int
       - memcached_maxconn | int >= 1
+    quiet: yes
 
 - name: test if memcached_cachesize is set correctly
   assert:
@@ -26,3 +29,4 @@
       - memcached_cachesize is defined
       - memcached_cachesize | int
       - memcached_cachesize | int >= 1
+    quiet: yes
