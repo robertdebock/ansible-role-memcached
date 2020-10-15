@@ -29,7 +29,6 @@ galaxy_info:
 
   galaxy_tags:
     - memcached
-    - centos
     - server
     - system
 
