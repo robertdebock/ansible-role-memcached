@@ -5,3 +5,4 @@
 repository:
   description: Install and configure memcached on your system.
   homepage: https://robertdebock.nl/
+  topics: memcached, server, system, ansible, molecule, tox, playbook, hacktoberfest
