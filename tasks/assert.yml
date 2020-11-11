@@ -3,7 +3,7 @@
   assert:
     that:
       - memcached_port is defined
-      - memcached_port | int
+      - memcached_port is number
       - memcached_port | int > 0
       - memcached_port | int < 65536
     quiet: yes
@@ -19,7 +19,7 @@
   assert:
     that:
       - memcached_maxconn is defined
-      - memcached_maxconn | int
+      - memcached_maxconn is number
       - memcached_maxconn | int >= 1
     quiet: yes
 
@@ -27,6 +27,6 @@
   assert:
     that:
       - memcached_cachesize is defined
-      - memcached_cachesize | int
+      - memcached_cachesize is number
       - memcached_cachesize | int >= 1
     quiet: yes
