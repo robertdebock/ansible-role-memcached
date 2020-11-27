@@ -13,6 +13,7 @@
   assert:
     that:
       - memcached_listenon is defined
+      - memcached_listenon is string
     quiet: yes
 
 - name: test if memcached_maxconn is set correctly
