@@ -2,9 +2,9 @@
 
 Install and configure memcached on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-memcached.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-memcached)|[![github](https://github.com/robertdebock/ansible-role-memcached/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-memcached/actions)|[![quality](https://img.shields.io/ansible/quality/30009)](https://galaxy.ansible.com/robertdebock/memcached)|[![downloads](https://img.shields.io/ansible/role/d/30009)](https://galaxy.ansible.com/robertdebock/memcached)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-memcached.svg)](https://github.com/robertdebock/ansible-role-memcached/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-memcached.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-memcached)|[![github](https://github.com/robertdebock/ansible-role-memcached/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-memcached/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-memcached/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-memcached)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/memcached)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/memcached)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-memcached.svg)](https://github.com/robertdebock/ansible-role-memcached/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
