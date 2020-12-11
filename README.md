@@ -4,7 +4,7 @@ Install and configure memcached on your system.
 
 |Travis|GitHub|GitLab|Quality|Downloads|Version|
 |------|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-memcached.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-memcached)|[![github](https://github.com/robertdebock/ansible-role-memcached/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-memcached/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-memcached/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-memcached)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/memcached)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/memcached)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-memcached.svg)](https://github.com/robertdebock/ansible-role-memcached/releases/)|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-memcached.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-memcached)|[![github](https://github.com/robertdebock/ansible-role-memcached/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-memcached/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-memcached/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-memcached)|[![quality](https://img.shields.io/ansible/quality/30009)](https://galaxy.ansible.com/robertdebock/memcached)|[![downloads](https://img.shields.io/ansible/role/d/30009)](https://galaxy.ansible.com/robertdebock/memcached)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-memcached.svg)](https://github.com/robertdebock/ansible-role-memcached/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -56,10 +56,11 @@ memcached_cachesize: 64
 
 ## [Requirements](#requirements)
 
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-memcached/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
+
+The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
 | Requirement | Travis | GitHub |
 |-------------|--------|--------|
