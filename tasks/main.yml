@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install memcached
-  package:
+  ansible.builtin.package:
     name: memcached
     state: present
 
 - name: allow memcached to be configured
-  copy:
+  ansible.builtin.copy:
     src: memcached.service
     dest: /usr/lib/systemd/system/memcached.service
     mode: "0644"
@@ -22,10 +22,10 @@
     - systemctl daemon-reload
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: configure memcached
-  template:
+  ansible.builtin.template:
     src: "{{ ansible_distribution }}-memcached.j2"
     dest: "{{ memcached_configfile }}"
     mode: "0644"
@@ -33,6 +33,6 @@
     - restart memcached
 
 - name: start memcached
-  service:
+  ansible.builtin.service:
     name: memcached
     state: started
