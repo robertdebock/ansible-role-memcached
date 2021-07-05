@@ -12,7 +12,7 @@ _memcached_configfile:
   default: /etc/sysconfig/memcached
   Alpine: /etc/conf.d/memcached
   Debian: /etc/memcached.conf
-  RedHat: &RHEL /etc/sysconfig/memcached
-  Rocky: *RHEL
+  RedHat: &redhat_configfile /etc/sysconfig/memcached
+  Rocky: *redhat_configfile
 
 memcached_configfile: "{{ _memcached_configfile[ansible_os_family] | default(_memcached_configfile['default']) }}"
