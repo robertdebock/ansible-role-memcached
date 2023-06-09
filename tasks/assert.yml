@@ -14,6 +14,7 @@
     that:
       - memcached_listenon is defined
       - memcached_listenon is string
+      - memcached_listenon is not none
     quiet: yes
 
 - name: assert | Test if memcached_maxconn is set correctly
