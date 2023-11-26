@@ -1,4 +1,4 @@
-# Ansible role [memcached](#memcached)
+# [Ansible role memcached](#memcached)
 
 Install and configure Memcached on your system.
 
